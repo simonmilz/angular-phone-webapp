@@ -46,7 +46,7 @@ for (modelName of Object.keys(models)) {
                 success: true,
                 message: name + ' deleted'
             })
-        ).catch((error) => {$scope.$apply();
+        ).catch((error) => {
             res.json({
                 success: false,
                 message: error
