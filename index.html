@@ -1,0 +1,174 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Todo App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="node_modules/fomantic-ui/dist/semantic.css" type="text/css" rel="stylesheet">
+</head>
+
+<body ng-app="Philipp">
+
+<div class="ui container" ng-controller="PhoneController">
+    <br />
+    <h1 class="ui dividing header">Phone Directory 
+      <button class="ui right floated button" ng-click="login()">login</button>
+      <button class="ui green right floated button" ng-click="register()">register</button>
+    </h1>
+    
+
+    <div class="ui grid">
+        <div class="six wide column">
+            <form class="ui form">
+                <div class="field">
+                    <label>Name des Telefons </label>
+                    <input type="text" ng-model="phoneName">
+                </div>
+
+                <div class="field">
+                    <label>Snippet des Telefons</label>
+                    <input type="text" ng-model="phoneSnippet">
+                </div>
+
+                <div class="field">
+                    <label>Tags</label>
+                    <select ng-model="tags" tag-field multiple class="ui search fluid dropdown"></select>
+                </div>
+
+                <button class="ui green right floated labeled icon button" ng-class="{'disabled': !isValid() }" ng-click="add()">
+                    <i class="plus icon"></i>
+                    Add
+                </button>
+            </form>
+        </div>
+
+        <div class="ten wide column">
+            <phone-list></phone-list>
+        </div>
+    </div>               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="ui-grid" ng-controller="UserController">
+        <form class="ui form">
+            <h4 class="ui dividing header">User Information</h4>
+            <div class="field">
+              <label>Name</label>
+              <div class="three fields">
+                <div class="field">
+                  <input type="text" name="shipping[first-name]" placeholder="First Name" ng-model="firstName">
+                </div>
+                <div class="field">
+                  <input type="text" name="shipping[last-name]" placeholder="Last Name" ng-model="lastName">
+                </div>
+                <div class="field">
+                    <input type="text" name="shipping[Age]" placeholder="Age" ng-model="age">
+                  </div>
+              </div>
+            </div>
+            <div class="field">
+              <label>Address</label>
+              <div class="fields">
+                <div class="twelve wide field">
+                  <input type="text" name="shipping[address]" placeholder="Street Address" ng-model="adress">
+                </div>
+                <div class="four wide field">
+                  <input type="text" name="shipping[address-2]" placeholder="Apt #" ng-model="apt">
+                </div>
+              </div>
+            </div>
+            <div class="two fields">
+                <div class="field">
+                    <label>State</label>
+                    <select class="ui fluid dropdown" ng-model="state">
+                      <option value="">State</option>
+                    </select>
+                </div>
+              <div class="field">
+                <label>Country</label>
+                <div class="ui fluid search selection dropdown">
+                  <input type="hidden" name="country" ng-model="country">
+                  <i class="dropdown icon"></i>
+                  <div class="default text">Select Country</div>
+                  
+                 </div>
+              </div>
+
+            </div>
+            
+            <button class="ui green right floated labeled icon button" ng-class="{'disabled': !isValid() }" ng-click="add()">
+                <i class="plus icon"></i>
+                Add
+            </button>
+          </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!-- Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="node_modules/dexie/dist/dexie.js"></script>
+<script src="node_modules/fomantic-ui/dist/semantic.js"></script>
+<script src="node_modules/angular/angular.js"></script>
+
+<!-- Application files -->
+<script src="js/app.js"></script>
+<script src="js/services/DatabaseService.js"></script>
+<script src="js/controller/phone.js"></script>
+<script src="js/directives/field/tag.js"></script>
+<script src="js/directives/phone/list.js"></script>
+<script src="js/directives/phone/list-item.js"></script>
+<script src="js/controller/user.js"></script>
+
+
+</body>
+
+</html>

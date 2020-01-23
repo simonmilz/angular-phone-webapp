@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Todo App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="node_modules/fomantic-ui/dist/semantic.css" type="text/css" rel="stylesheet">
+</head>
+
+<body ng-app="Philipp">
+
+<div class="ui container">
+    <h1 class="ui dividing header">Phone Directory</h1>
+
+    <div class="ui grid" ng-controller="PhoneController">
+        <div class="six wide column">
+            <form class="ui form">
+                <div class="field">
+                    <label>Name des Telefons </label>
+                    <input type="text" ng-model="phoneName">
+                </div>
+
+                <div class="field">
+                    <label>Snippet des Telefons</label>
+                    <input type="text" ng-model="phoneSnippet">
+                </div>
+
+                <button class="ui green right floated labeled icon button" ng-class="{'disabled': !isValid() }" ng-click="add()">
+                    <i class="plus icon"></i>
+                    Add
+                </button>
+            </form>
+        </div>
+
+        <div class="ten wide column">
+            <phone-list class="ui list">
+                <phone-list-item ng-repeat="phone in phones track by phone.id"></phone-list-item>
+            </phone-list>
+        </div>
+    </div>
+</div>
+
+<!-- Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="node_modules/fomantic-ui/dist/semantic.js"></script>
+<script src="node_modules/angular/angular.js"></script>
+
+<!-- Application files -->
+<script src="js/app.js"></script>
+<script src="js/controller/phone.js"></script>
+<script src="js/directives/phone/list.js"></script>
+<script src="js/directives/phone/list-item.js"></script>
+
+</body>
+
+</html>

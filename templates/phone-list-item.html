@@ -1,0 +1,56 @@
+<td data-label="Phone">
+    <strong>{{ phone.name }}</strong><br />
+    {{ phone.snippet }}
+</td>
+
+<td data-label="Tags">
+    <a class="ui blue label" ng-repeat="tag in phone.tags">{{ tag }}</a>
+</td>
+
+<td data-label="Actions">
+
+    <button class="ui mini right floated button" ng-click=editItem()>
+        Edit
+    </button>
+
+    <button class="ui mini right floated button" ng-click=removeItem()>
+        Remove
+    </button>
+
+    <div class="ui mini modal remove">
+        <div class="header">Remove Phone</div>
+
+        <div class="content">
+            <p>Are you sure you want to remove {{ phone.name }}?</p>
+        </div>
+
+        <div class="actions">
+            <div class="ui approve green button">Yes</div>
+            <div class="ui deny red button">No</div>
+        </div>
+    </div>
+
+
+
+    <div class="ui mini modal edit">
+        <div class="header">Edit Phone</div>
+
+        <div class="content">
+            <div class="ui input focus">
+                <input type="text" placeholder="New Name" ng-model="phoneNewName">
+            </div>
+
+            <div class="ui input focus">
+                <input type="text" placeholder="New Snippet" ng-model="phoneNewSnippet">
+            </div>
+            <p><b>NOTE</b>: name and snippet must contain something</p>
+        </div>
+
+        <div class="actions">
+            <div class="ui approve green button">Yes</div>
+            <div class="ui deny red button">No</div>
+        </div>
+    </div>
+
+
+</td>

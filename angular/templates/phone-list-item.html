@@ -1,0 +1,23 @@
+<div class="item">
+    <div class="header">{{ phone.name }}</div>
+
+    {{ phone.snippet }}
+
+    <button class="ui mini icon labeled right floated button" ng-click="removeItem()">
+        <i class="icon minus"></i>
+        Remove
+    </button>
+
+    <div class="ui mini modal">
+        <div class="header">Remove Phone</div>
+
+        <div class="content">
+            <p>Are you sure you want to remove {{ phone.name }}?</p>
+        </div>
+
+        <div class="actions">
+            <div class="ui approve green button">Yes</div>
+            <div class="ui deny red button">No</div>
+        </div>
+    </div>
+</div>
